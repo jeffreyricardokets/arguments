@@ -4,16 +4,17 @@ __human_name__ = 'arguments'
 
 # Add your code after this line
 
+#greet function
 def greet(name, greeting_template = 'Hello, <name>!'):
-        if '<name>' in greeting_template:
-            greeting_template = greeting_template[:greeting_template.find("<")] + name + greeting_template[greeting_template.find('>') +1:]
-            return greeting_template
-        else:
-            #if the user forget to put <name> 
-            return f'{greeting_template} {name}'
-        
+    if '<name>' in greeting_template:
+        greeting_template = greeting_template[:greeting_template.find("<")] + name + greeting_template[greeting_template.find('>') +1:]
+        return greeting_template
+    else:
+        #if the user forget to put <name> 
+        return f'{greeting_template} {name}'
+    
 
-
+#gravity of the planets
 gravity = {
     'sun' : 274,
     'jupiter' : 24.92,
@@ -28,13 +29,13 @@ gravity = {
     'pluto' : 0.58
 }
 
+#force function
 def force(mass,body ='earth'):
     force_of_item = mass * round(gravity[body], 1)
     return force_of_item
 
+#pull function
 def pull(m1, m2, d):
     g = 6.674*(10**-11)
     f = g *((m1 * m2) /d ** 2)
     return f
-
-print(greet('bob' ,'hello <name> how are you'))
